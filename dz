@@ -1,0 +1,200 @@
+#include <iostream>
+using namespace std;
+class Hero {
+public:
+	void Print() {
+		cout << "This is hero\n";
+	}
+};
+class Villain {
+public:
+	void Print() {
+		cout << "This is Villain\n";
+	}
+};
+class Race {
+public:
+	string god = "This is god\n";
+	string people = "This is people\n";
+};
+class Abilities {
+public:
+	string fly = "This person can fly\n";
+	string super_strength = "This person have super strength\n";
+	string super_speed = "This person can have super speed\n";
+	string xray_vision = "This person can have xray vision\n";
+	string bulletproofness = "This person can have bulletproofness\n";
+
+};
+class God : public Race {
+public:
+	string get_god() {
+		return god;
+	}
+};
+class People : public Race {
+public:
+	string get_people() {
+		return people;
+	}
+};
+class Fly : public Abilities {
+public:
+	string get_Fly() {
+		return fly;
+	}
+};
+class Super_strength : public Abilities {
+public:
+	string get_super_strength() {
+		return super_strength;
+	}
+};
+class Superspeed : public Abilities {
+public:
+	string get_super_speed() {
+		return super_speed;
+	}
+};
+class Xrayvision : public Abilities {
+public:
+	string get_xray_vision() {
+		return xray_vision;
+	}
+};
+class Bulletproofness : public Abilities {
+public:
+	string get_bulletproofness() {
+		return bulletproofness;
+	}
+};
+
+class IronMan : public Hero,public Super_strength,public Bulletproofness, public Abilities, public People {
+public:
+	void Print() {
+		cout << "He is IronMan\n" ;
+		Hero::Print();
+		cout << Super_strength::get_super_strength();
+		cout << Bulletproofness::get_bulletproofness();
+		cout << People::get_people();
+		cout << "\n";
+	}
+};
+
+
+class CaptainAmerica : public Hero,public Super_strength,public Bulletproofness, public Abilities, public People {
+
+public:
+	void Print(){
+		cout << "He is Captain America\n";
+		Hero::Print();
+		cout << Super_strength::get_super_strength();
+		cout << Bulletproofness::get_bulletproofness();
+		cout << People::get_people();
+		cout << "\n";
+	}
+};
+
+
+class SpiderMan : public Hero, public Super_strength, public Superspeed, public Abilities, public People {
+public:
+	void Print() {
+		cout << "He is Spider-Man\n";
+		Hero::Print();
+		cout << Super_strength::get_super_strength();
+		cout << Superspeed::get_super_speed();
+		cout << People::get_people();
+		cout << "\n";
+	}
+};
+
+
+class Thor : public Hero, public Fly, public Super_strength, public Bulletproofness, public Abilities,public God {
+
+public:
+	void Print() {
+		cout << "He is Thor\n";
+		Hero::Print();
+		cout << Fly::get_Fly();
+		cout << Super_strength::get_super_strength();
+		cout << Bulletproofness::get_bulletproofness();
+		cout << God::get_god();
+		cout << "\n";
+	}
+};
+
+
+class Thanos : public Villain, public Super_strength, public Bulletproofness, public Abilities, public God {
+public:
+	void Print() {
+		cout << "He is Thanos\n";
+		Villain::Print();
+		cout << Super_strength::get_super_strength();
+		cout << Bulletproofness::get_bulletproofness();
+		cout << God::get_god();
+		cout << "\n";
+	}
+};
+
+
+class Loki : public Villain, public Superspeed, public Abilities {
+
+public:
+	void Print() {
+		cout << "He is Thanos\n";
+		Villain::Print();
+		cout << Superspeed::get_super_speed();
+		cout << "\n";
+	}
+};
+
+
+class GreenGoblin : public Villain, public Fly, public Super_strength, public Abilities, public People {
+
+public:
+	void Print() {
+		cout << "He is Green Goblin\n";
+		Villain::Print();
+		cout << Fly::get_Fly();
+		cout << Super_strength::get_super_strength();
+		cout << People::get_people();
+		cout << "\n";
+	}
+};
+
+
+class Ultron : public Villain, public Fly, public Super_strength, public Bulletproofness, public Xrayvision, public Abilities, public God {
+
+public:
+	void Print() {
+		cout << "He is Ultron\n";
+		Villain::Print();
+		cout << Fly::get_Fly();
+		cout << Super_strength::get_super_strength();
+		cout << Xrayvision::get_xray_vision();
+		cout << Bulletproofness::get_bulletproofness();
+		cout << God::get_god();
+		cout << "\n";
+	}
+};
+
+
+int main() {
+
+	IronMan i;
+	i.Print();
+	CaptainAmerica c;
+	c.Print();
+	SpiderMan sp;
+	sp.Print();
+	Thor t;
+	t.Print();
+	Thanos th;
+	th.Print();
+	Loki l;
+	l.Print();
+	GreenGoblin g;
+	g.Print();
+	Ultron u;
+	u.Print();
+}
